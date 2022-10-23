@@ -1,0 +1,17 @@
+name: 'eligible-actor'
+description: 'Execute a GitHub Action only if the actor is authorised to do so.'
+author: 'Stefan Natter (https://natterstefan.me)'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
+branding:
+  icon: 'sliders'
+  color: 'green'
+inputs:
+  ruleId:
+    required: true
+    description: 'Id of the rule to apply.'
+  rulesFile:
+    required: false
+    description: 'Name to the file containing the rules. It must be located in ./github!'
+    default: 'rules.json'

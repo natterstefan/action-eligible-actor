@@ -1,0 +1,75 @@
+{
+  "name": "action-entitled-actor",
+  "version": "0.0.0",
+  "description": "Read .env.[development|test|production][.local] files in Next.js projects and add variables as secrets to GITHUB_ENV",
+  "author": {
+    "name": "Stefan Natter",
+    "url": "https://natterstefan.me>"
+  },
+  "license": "MIT",
+  "private": true,
+  "main": "lib/main.js",
+  "engines": {
+    "node": "^16.0.0"
+  },
+  "scripts": {
+    "all": "npm run format && npm run lint && npm run package && npm test",
+    "build": "rimraf dist && tsc",
+    "format-check": "prettier --check '**/*.ts'",
+    "format": "prettier --write '**/*.ts'",
+    "lint": "eslint .",
+    "package": "ncc build --source-map --license licenses.txt",
+    "prepare": "is-ci || husky install",
+    "prepackage": "npm run build",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/natterstefan/action-entitled-actor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/natterstefan/action-entitled-actor./issues"
+  },
+  "homepage": "https://github.com/natterstefan/action-entitled-actor.#readme",
+  "keywords": [
+    "next.js",
+    "nextjs",
+    "dotenv",
+    "github-action"
+  ],
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@next/env": "^12.3.1",
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/commit-analyzer": "^9.0.2",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^8.0.6",
+    "@semantic-release/release-notes-generator": "^10.0.3",
+    "@types/jest": "^28.1.8",
+    "@types/node": "^16.11.66",
+    "@types/semantic-release": "^17.2.4",
+    "@typescript-eslint/parser": "^5.40.1",
+    "@vercel/ncc": "^0.34.0",
+    "all-contributors-cli": "^6.24.0",
+    "conventional-changelog-conventionalcommits": "^5.0.0",
+    "eslint": "^8.25.0",
+    "eslint-config-ns-ts-base": "^3.3.0",
+    "eslint-plugin-github": "^4.4.0",
+    "eslint-plugin-jest": "^26.9.0",
+    "husky": "^8.0.1",
+    "is-ci": "^3.0.1",
+    "jest": "^28.1.3",
+    "jest-preset-ns": "^2.1.1",
+    "js-yaml": "^4.1.0",
+    "prettier": "2.7.1",
+    "rimraf": "^3.0.2",
+    "semantic-release": "^19.0.5",
+    "ts-jest": "^28.0.8",
+    "typescript": "^4.8.4"
+  }
+}

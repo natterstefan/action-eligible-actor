@@ -1,0 +1,9 @@
+[
+  {
+    "id": "1",
+    "description": "Only repo owners and act",
+    "eligibleActors": ["natterstefan", "nektos/act"],
+    "failureMessage": "Only the repo owner and the actor of https://github.com/nektos/act can do this!",
+    "failSilently": true
+  }
+]
