@@ -4,6 +4,15 @@
 
 ## Usage
 
+Instead of adding
+
+```yml
+if: ${{ github.actor == 'username' }}
+```
+
+to individual workflows and steps, use this action to standardize and easily
+manage which actor can perform which workflow.
+
 ```yml
 name: Is eligible Actor?
 id: eligibleActor
