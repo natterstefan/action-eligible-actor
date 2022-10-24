@@ -1,5 +1,12 @@
 # action-entitled-actor Changelog
 
+## [1.0.1](https://github.com/natterstefan/action-entitled-actor/compare/v1.0.0...v1.0.1) (2022-10-24)
+
+
+### Bug Fixes
+
+* updated docs and added links to type definition ([a4aac3f](https://github.com/natterstefan/action-entitled-actor/commit/a4aac3fd9604d198eedc6e6049755379d7bfe5c4))
+
 ## 1.0.0 (2022-10-24)
 
 
