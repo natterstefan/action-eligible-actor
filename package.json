@@ -1,7 +1,7 @@
 {
   "name": "action-entitled-actor",
   "version": "0.0.0",
-  "description": "Read .env.[development|test|production][.local] files in Next.js projects and add variables as secrets to GITHUB_ENV",
+  "description": "Execute a GitHub Action only if the (triggering) actor is eligible (=authorised) to do so.",
   "author": {
     "name": "Stefan Natter",
     "url": "https://natterstefan.me>"
