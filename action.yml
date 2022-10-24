@@ -14,4 +14,4 @@ inputs:
   rulesFile:
     required: false
     description: 'Name to the file containing the rules. It must be located in ./github!'
-    default: 'rules.json'
+    default: 'eligible-actors-rules.json'

@@ -28,7 +28,7 @@ jobs:
         id: eligibleActor
         uses: ./
         with:
-          rulesFile: 'rules.json'
+          rulesFile: 'eligible-actors-rules.json' # = default value
           ruleId: 1
 
       - name: Test

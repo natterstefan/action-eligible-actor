@@ -18,7 +18,7 @@ name: Is eligible Actor?
 id: eligibleActor
 uses: ./
 with:
-  rulesFile: 'rules.json'
+  rulesFile: 'eligible-actors-rules.json'
   ruleId: 1
 ```
 

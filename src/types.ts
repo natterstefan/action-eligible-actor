@@ -1,7 +1,7 @@
 export type Input = {
   ruleId: string
   /**
-   * @default "rules.json"
+   * @default "eligible-actors.json"
    */
   rulesFile?: string
 }

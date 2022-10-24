@@ -5,9 +5,11 @@ import * as core from '@actions/core'
 
 import {InputValues, Rules} from './types'
 
+const DEFAULT_RULES_FILE = 'eligible-actors-rules.json'
+
 const getInput = (): InputValues => {
   const ruleId = core.getInput('ruleId', {required: true})
-  const rulesFile = core.getInput('rulesFile') || 'rules.json'
+  const rulesFile = core.getInput('rulesFile') || DEFAULT_RULES_FILE
 
   return {
     ruleId,
