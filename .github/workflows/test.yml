@@ -18,7 +18,7 @@ jobs:
     steps:
       - name: Context
         run: |
-          echo GITHUB_ACTOR = "${{env.GITHUB_ACTOR}}"
+          echo GITHUB_ACTOR = "$GITHUB_ACTOR"
           echo ACTOR = "$ACTOR"
           echo TRIGGERING_ACTOR = "$TRIGGERING_ACTOR"
         env:
