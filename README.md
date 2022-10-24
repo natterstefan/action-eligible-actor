@@ -67,14 +67,14 @@ npm run package
 Run the tests
 
 ```bash
+npm run package # or npm run dev (watch mode)
 npm test
 ```
 
 Test the workflow locally with <https://github.com/nektos/act>!
 
 ```bash
-# TODO: add watch command
-npm run package
+npm run package # or npm run dev (watch mode)
 act -j testNoFail && act -j testFail
 ```
 

@@ -45,9 +45,10 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 const path_1 = __importDefault(__nccwpck_require__(17));
 const fs_1 = __importDefault(__nccwpck_require__(147));
 const core = __importStar(__nccwpck_require__(186));
+const DEFAULT_RULES_FILE = 'eligible-actors-rules.json';
 const getInput = () => {
     const ruleId = core.getInput('ruleId', { required: true });
-    const rulesFile = core.getInput('rulesFile') || 'rules.json';
+    const rulesFile = core.getInput('rulesFile') || DEFAULT_RULES_FILE;
     return {
         ruleId,
         rulesFile
