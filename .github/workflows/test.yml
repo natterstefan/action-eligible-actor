@@ -21,7 +21,8 @@ jobs:
       - run: |
           npm run all
 
-  testNoFail: # make sure the action works on a clean machine without building
+  # The following job will pass and output true in the last step.
+  testFailSilentyTrue:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -33,31 +34,62 @@ jobs:
           rulesFile: 'eligible-actors-rules.json' # = default value
           ruleId: 1
 
-      - name: Test
+      - name: Log Result
         env:
+          # If you have chosen to not fail (`failSilently = true`) use the
+          # output of the workflow to decide what to do next when the actor is
+          # or is not eligible for what the actor wanted to do.
           IS_ELIGIBLE_ACTOR: ${{steps.eligibleActor.outputs.isEligibleActor}}
         run: |
           echo "action-eligible-actor outputs:"
           echo "$IS_ELIGIBLE_ACTOR"
 
-  testFail:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
+      - name: Exit If False
+        # this condition is false, which means the step will pass
+        if: ${{ steps.eligibleActor.outputs.isEligibleActor == 'false' }}
+        run: exit 1
 
-      - name: Is eligible Actor?
-        id: eligibleActor
-        uses: ./
-        with:
-          rulesFile: 'eligible-actors-rules.json'
-          ruleId: 2
+      - name: Log if True
+        # this condition is false, which means the step will pass
+        if: ${{ steps.eligibleActor.outputs.isEligibleActor == 'true' }}
+        run: echo "It works!"
 
-      - name: Test
-        # proceed eventhough the action failed (exitcode = 1), to test the
-        # output in such a case.
-        if: failure()
-        env:
-          IS_ELIGIBLE_ACTOR: ${{steps.eligibleActor.outputs.isEligibleActor}}
-        run: |
-          echo "action-eligible-actor outputs:"
-          echo "$IS_ELIGIBLE_ACTOR"
+  # The following job will fail and output false in the last step, as the last
+  # step runs on failure (see `if: failure()` condition).
+  # NOTE: uncomment to see it in action
+  # testFailSilentyFalse:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+
+  #     - name: Is eligible Actor?
+  #       id: eligibleActor
+  #       uses: ./
+  #       with:
+  #         rulesFile: 'eligible-actors-rules.json'
+  #         ruleId: 2 # with failSilenty = false
+
+  #     - name: Test
+  #       # runs when the workflow step failed (exitcode = 1)
+  #       if: failure()
+  #       env:
+  #         IS_ELIGIBLE_ACTOR: ${{steps.eligibleActor.outputs.isEligibleActor}}
+  #       run: |
+  #         echo "action-eligible-actor outputs:"
+  #         echo "$IS_ELIGIBLE_ACTOR"
+
+  #     - name: Test-Success
+  #       # will not log, because the step did not succeed
+  #       if: success()
+  #       run: |
+  #         echo "Sucess Case"
+
+  #     - name: Test-Failure
+  #       if: failure()
+  #       run: |
+  #         echo "Failure"
+
+  #     - name: Test-Always
+  #       if: always()
+  #       run: |
+  #         echo "Always"
