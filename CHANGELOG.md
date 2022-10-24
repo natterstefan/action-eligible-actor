@@ -1,5 +1,14 @@
 # action-entitled-actor Changelog
 
+## 1.0.0 (2022-10-24)
+
+
+### Features
+
+* added logic, tests etc. for workflow ([b74f9d8](https://github.com/natterstefan/action-entitled-actor/commit/b74f9d8d359baec93c58fc4d8c63b06b1a4ab251))
+* added test for failSilently, and improved README ([74a2835](https://github.com/natterstefan/action-entitled-actor/commit/74a2835a55e37fc40a8923199e7d7771fc753c0a))
+* renamed default rulesFile ([bb9e54b](https://github.com/natterstefan/action-entitled-actor/commit/bb9e54b9bc06ebb61434776b9a5013760a3f8a79))
+
 ## [1.1.1](https://github.com/natterstefan/action-entitled-actor/compare/v1.1.0...v1.1.1) (2022-10-18)
 
 
