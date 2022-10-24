@@ -43,6 +43,8 @@ jobs:
       - name: Is eligible Actor?
         id: eligibleActor
         uses: ./
+        env:
+          ACTIONS_STEP_DEBUG: true
         with:
           rulesFile: 'eligible-actors-rules.json' # = default value
           ruleId: 1
