@@ -26,7 +26,7 @@ export type Rule = {
    */
   description?: string
   /**
-   * Message to display in the GitHub logs when eligible check fails.
+   * Message to display in the GitHub Action logs when eligible check fails.
    */
   failureMessage?: string
   /**

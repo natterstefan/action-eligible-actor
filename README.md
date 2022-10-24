@@ -36,8 +36,8 @@ not.
 - name: Can actor release?
   uses: natterstefan/action-eligible-actor@v1
   with:
-    rulesFile: 'eligible-actors-rules.json'
-    ruleId: 1
+    rulesFile: 'eligible-actors-rules.json' # default
+    ruleId: 1 # required
 
 # if `failSilently` for the rule with the id `1` was set to `false`, this step
 # will not start if the actor is not eligible (included in `eligibleActors`).
@@ -46,15 +46,15 @@ not.
   run: npx semantic-release
 ```
 
-With the following `eligible-actors-rules.json`:
+With the following `eligible-actors-rules.json` ([type definition](src/types.ts#L14-L36)):
 
 ```json
 [
   {
     "id": "1",
-    "description": "Only repo owner and act",
+    "description": "Repository owner only",
     "eligibleActors": ["natterstefan"],
-    "failureMessage": "Only the repo owner can do this!",
+    "failureMessage": "Only the repository owner can do this!",
     "failSilently": false
   }
 ]
