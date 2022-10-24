@@ -1,5 +1,7 @@
 # action-eligible-actor
 
+[![Test](https://github.com/natterstefan/action-eligible-actor/actions/workflows/test.yml/badge.svg)](https://github.com/natterstefan/action-eligible-actor/actions/workflows/test.yml) [![CodeQL](https://github.com/natterstefan/action-eligible-actor/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/natterstefan/action-eligible-actor/actions/workflows/codeql-analysis.yml)
+
 > Execute a GitHub Action only if the (triggering) actor is eligible (=authorised) to do so.
 
 ## Use Case

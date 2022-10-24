@@ -69,8 +69,8 @@ jobs:
         if: ${{ steps.eligibleActor.outputs.isEligibleActor == 'true' }}
         run: echo "It works!"
 
-  # The following job will fail and output false in the last step, as the last
-  # step runs on failure (see `if: failure()` condition).
+  # The following job will fail but still output "Failure" and "Always" as the
+  # steps run on failure (see `if: failure()` condition) and always.
   # NOTE: uncomment to see it in action
   # testFailSilentyFalse:
   #   runs-on: ubuntu-latest
