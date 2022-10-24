@@ -1,4 +1,5 @@
-name: 'build-test'
+name: Test
+
 on: # rebuild any PRs and main branch changes
   pull_request:
   push:
@@ -19,7 +20,8 @@ jobs:
           npm install
       - run: |
           npm run all
-  test: # make sure the action works on a clean machine without building
+
+  testNoFail: # make sure the action works on a clean machine without building
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -32,6 +34,28 @@ jobs:
           ruleId: 1
 
       - name: Test
+        env:
+          IS_ELIGIBLE_ACTOR: ${{steps.eligibleActor.outputs.isEligibleActor}}
+        run: |
+          echo "action-eligible-actor outputs:"
+          echo "$IS_ELIGIBLE_ACTOR"
+
+  testFail:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Is eligible Actor?
+        id: eligibleActor
+        uses: ./
+        with:
+          rulesFile: 'eligible-actors-rules.json'
+          ruleId: 2
+
+      - name: Test
+        # proceed eventhough the action failed (exitcode = 1), to test the
+        # output in such a case.
+        if: failure()
         env:
           IS_ELIGIBLE_ACTOR: ${{steps.eligibleActor.outputs.isEligibleActor}}
         run: |

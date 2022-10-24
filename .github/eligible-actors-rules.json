@@ -5,5 +5,11 @@
     "eligibleActors": ["natterstefan", "nektos/act"],
     "failureMessage": "Only the repo owner and the actor of https://github.com/nektos/act can do this!",
     "failSilently": true
+  },
+  {
+    "id": "2",
+    "description": "Only octocat can do this!",
+    "eligibleActors": ["octocat"],
+    "failSilently": false
   }
 ]

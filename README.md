@@ -1,6 +1,6 @@
 # action-eligible-actor
 
-> Execute a GitHub Action only if the actor is authorised to do so.
+> Execute a GitHub Action only if the (triggering) actor is eligible (=authorised) to do so.
 
 ## Usage
 
@@ -14,19 +14,30 @@ to individual workflows and steps, use this action to standardize and easily
 manage which actor can perform which workflow.
 
 ```yml
-name: Is eligible Actor?
-id: eligibleActor
-uses: ./
-with:
-  rulesFile: 'eligible-actors-rules.json'
-  ruleId: 1
+# Setup Workflow
+- name: Is eligible Actor?
+  id: eligibleActor
+  uses: ./
+  with:
+    rulesFile: 'eligible-actors-rules.json'
+    ruleId: 1
+
+## Use output
+- name: Test
+  env:
+    IS_ELIGIBLE_ACTOR: ${{steps.eligibleActor.outputs.isEligibleActor}}
+  run: |
+    echo "action-eligible-actor outputs:"
+    echo "$IS_ELIGIBLE_ACTOR"
 ```
+
+### Example `rulesFile`
 
 ```json
 [
   {
     "id": "1",
-    "description": "Only repo owners and act",
+    "description": "Only repo owner and act",
     "eligibleActors": ["natterstefan", "nektos/act"],
     "failureMessage": "Only the repo owner and the actor of https://github.com/nektos/act can do this!",
     "failSilently": true
@@ -64,7 +75,7 @@ Test the workflow locally with <https://github.com/nektos/act>!
 ```bash
 # TODO: add watch command
 npm run package
-act -j test
+act -j testNoFail && act -j testFail
 ```
 
 ### LICENSE
