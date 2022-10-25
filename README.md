@@ -96,6 +96,14 @@ npm run package # or npm run dev (watch mode)
 act -j testFailSilentyTrue && act -j testFailSilentyFalse
 ```
 
+## Todos / To be discussed
+
+- [ ] add `actor` input instead of implicitly using `process.env.GITHUB_ACTOR`.
+
+## Alternatives
+
+- [im-open/is-actor-authorized: Action that determines if the actor who initiated the workflow is authorized to do so.](https://github.com/im-open/is-actor-authorized)
+
 ### LICENSE
 
 [MIT](LICENSE)
