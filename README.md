@@ -104,7 +104,7 @@ act -j testFailSilentyTrue && act -j testFailSilentyFalse
 
 - [im-open/is-actor-authorized: Action that determines if the actor who initiated the workflow is authorized to do so.](https://github.com/im-open/is-actor-authorized)
 
-### LICENSE
+## LICENSE
 
 [MIT](LICENSE)
 
