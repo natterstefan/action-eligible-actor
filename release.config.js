@@ -13,7 +13,7 @@ module.exports = {
     [
       '@semantic-release/changelog',
       {
-        changelogTitle: '# action-entitled-actor Changelog'
+        changelogTitle: '# action-eligible-actor Changelog'
       }
     ],
     [

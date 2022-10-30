@@ -37,7 +37,7 @@ jest.mock('path', () => ({
   join: (...args: string[]) => mockJoin(...args)
 }))
 
-describe('action-entitled-actor', () => {
+describe('action-eligible-actor', () => {
   beforeEach(() => {
     process.env.GITHUB_WORKSPACE = 'github-workspace'
     process.env.GITHUB_ACTOR = 'someactor'

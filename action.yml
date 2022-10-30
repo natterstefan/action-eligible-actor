@@ -5,7 +5,7 @@ runs:
   using: 'node16'
   main: 'dist/index.js'
 branding:
-  icon: 'sliders'
+  icon: 'shield'
   color: 'green'
 inputs:
   ruleId:

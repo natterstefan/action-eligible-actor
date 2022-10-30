@@ -1,5 +1,5 @@
 {
-  "name": "action-entitled-actor",
+  "name": "action-eligible-actor",
   "version": "0.0.0",
   "description": "Execute a GitHub Action only if the (triggering) actor is eligible (=authorised) to do so.",
   "author": {
@@ -26,12 +26,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/natterstefan/action-entitled-actor.git"
+    "url": "git+https://github.com/natterstefan/action-eligible-actor.git"
   },
   "bugs": {
-    "url": "https://github.com/natterstefan/action-entitled-actor./issues"
+    "url": "https://github.com/natterstefan/action-eligible-actor./issues"
   },
-  "homepage": "https://github.com/natterstefan/action-entitled-actor.#readme",
+  "homepage": "https://github.com/natterstefan/action-eligible-actor.#readme",
   "keywords": [
     "github-action",
     "github-action-permissions"

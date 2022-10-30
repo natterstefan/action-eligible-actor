@@ -16,9 +16,7 @@ action can be very useful.
 
 ## Usage
 
-Instead of adding `if` conditions to individual workflows and steps, use this
-action to standardize and easily manage which actor can perform which workflow.
-Simply add the action to your workflow, define `rulesFile` and the `ruleId` to
+Add the action to your workflow, define `rulesFile` and the `ruleId` to
 apply to and decide if the workflow should fail silently (`failSilently`) or
 not.
 
@@ -102,6 +100,8 @@ act -j testFailSilentyTrue && act -j testFailSilentyFalse
 
 ## Alternatives
 
+- [natterstefan/action-authorised-actor](https://github.com/natterstefan/action-authorised-actor): configure if the current actor is authorised to run the workflow with GitHub Secrets.
+- [actions-cool/check-user-permission: 👮 A GitHub Action to check user permission of the current repository.](https://github.com/actions-cool/check-user-permission)
 - [im-open/is-actor-authorized: Action that determines if the actor who initiated the workflow is authorized to do so.](https://github.com/im-open/is-actor-authorized)
 
 ## LICENSE

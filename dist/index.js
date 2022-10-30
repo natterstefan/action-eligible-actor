@@ -61,14 +61,6 @@ function run() {
         try {
             core.debug(`Reading input ...`);
             const { rulesFile, ruleId } = getInput();
-            /**
-             * The username of the user that triggered the initial workflow run. If the
-             * workflow run is a re-run, this value may differ from
-             * github.triggering_actor. Any workflow re-runs will use the privileges of
-             * github.actor, even if the actor initiating the re-run
-             * (github.triggering_actor) has different privileges.
-             */
-            // validate github.actor and github.triggering_actor
             const fileUrl = path_1.default.join(process.env.GITHUB_WORKSPACE, '.github', rulesFile);
             core.debug(`Reading rules ...`);
             /**
