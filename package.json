@@ -37,9 +37,7 @@
     "github-action-permissions"
   ],
   "dependencies": {
-    "@actions/core": "^1.10.0",
-    "@next/env": "^12.3.1",
-    "dotenv": "^16.0.3"
+    "@actions/core": "^1.10.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
