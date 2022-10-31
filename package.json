@@ -55,7 +55,7 @@
     "all-contributors-cli": "^6.24.0",
     "conventional-changelog-conventionalcommits": "^5.0.0",
     "eslint": "^8.26.0",
-    "eslint-config-ns-ts-base": "^3.4.0",
+    "eslint-config-ns-ts-base": "^3.5.0",
     "eslint-plugin-github": "^4.4.0",
     "eslint-plugin-jest": "^26.9.0",
     "husky": "^8.0.1",
